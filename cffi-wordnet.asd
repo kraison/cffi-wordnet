@@ -9,7 +9,9 @@
   :author "Kevin Raison <last name @ chatsubo dot net>"
   :version "0.1"
   :description "CFFI Interface to Wordnet 3.0"
-  :depends-on (:cffi)
+  :depends-on (:cffi
+	       :cl-ppcre)
   :components ((:file "wordnet-package")
 	       (:file "cffi" :depends-on ("wordnet-package"))
-	       (:file "wordnet" :depends-on ("cffi"))))
+	       (:file "constants" :depends-on ("cffi"))
+	       (:file "wordnet" :depends-on ("constants"))))
