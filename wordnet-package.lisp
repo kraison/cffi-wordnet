@@ -4,4 +4,10 @@
   (:use #:cl #:cffi)
   (:nicknames #:wordnet)
   (:export #:wordnet-init
-	   #:wordnet-search))
+	   #:wordnet-search
+	   #:+noun+
+	   #:+verb+
+	   #:+adjective+
+	   #:+adverb+
+	   #:+all-senses+
+	   #:+synonyms+))

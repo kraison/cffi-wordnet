@@ -98,7 +98,7 @@
 (cl:defconstant VERBGROUP 19)
 (cl:defconstant DERIVATION 20)
 (cl:defconstant CLASSIFICATION 21)
-(cl:defconstant CLASS 22)
+;;(cl:defconstant CLASS 22)
 (cl:defconstant LASTTYPE 22)
 (cl:defconstant SYNS (cl:+ 22 1))
 (cl:defconstant FREQ (cl:+ 22 2))
