@@ -53,8 +53,8 @@
 
 ;;;SWIG wrapper code ends here
 (define-foreign-library libwordnet
-  (:unix (:or "/usr/lib/libwordnet.so" "/usr/lib/libwordnet-3.0.so"))
-  (t (:default "/usr/lib/libwordnet.so")))
+  (:unix (:or "/usr/lib/libwordnet.so" "/usr/lib/libwordnet-3.0.so" "/usr/local/WordNet-3.0/lib/libWN.3.dylib"))
+  (t (:default (:or "/usr/lib/libwordnet.so" "/usr/local/WordNet-3.0/lib/libWN.3.dylib"))))
 
 (use-foreign-library libwordnet)
 
