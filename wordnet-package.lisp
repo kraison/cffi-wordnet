@@ -10,4 +10,6 @@
 	   #:+adjective+
 	   #:+adverb+
 	   #:+all-senses+
-	   #:+synonyms+))
+	   #:+synonyms+
+           #:+holonym+
+           #:+meronym+))

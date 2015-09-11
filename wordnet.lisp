@@ -20,14 +20,18 @@
 	   (loop
 	      (if (and (pointerp ss) (null-pointer-p ss))
 		  (return)
-		  (setq words (nconc words (get-synset-words ss))
-			ss (cffi:foreign-slot-value ss 'Synset 'nextss)))))
+                  (progn
+                    ;;(setq words (nconc words (get-synset-words ss)))
+                    (push (get-synset-words ss) words)
+                    (setq ss (cffi:foreign-slot-value ss 'Synset 'nextss))))))
       (free_syns synset))
-    (remove-duplicates
-     (mapcar #'(lambda (word)
-		 (cl-ppcre:regex-replace-all "_" (string-downcase word) " "))
-	     words)
-     :test 'string=)))
+    (mapcar (lambda (set)
+              (remove-duplicates
+               (mapcar (lambda (word)
+                         (cl-ppcre:regex-replace-all "_" (string-downcase word) " "))
+                       set)
+               :test 'string=))
+            (reverse words))))
 
 (defun test ()
   (wninit)
@@ -35,8 +39,7 @@
   (let ((synset (findtheinfo_ds "block" VERB SYNS ALLSENSES)))
     (unwind-protect
 	 (progn
-	   (format t "Sense 1, words: ~A~%" 
+	   (format t "Sense 1, words: ~A~%"
 		   (cffi:foreign-slot-value synset 'Synset 'wcount))
 	   (get-synset-words synset))
       (free_syns synset))))
-

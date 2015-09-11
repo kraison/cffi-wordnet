@@ -10,7 +10,8 @@
   :version "0.1"
   :description "CFFI Interface to Wordnet 3.0"
   :depends-on (:cffi
-	       :cl-ppcre)
+	       :cl-ppcre
+               :alexandria)
   :components ((:file "wordnet-package")
 	       (:file "cffi" :depends-on ("wordnet-package"))
 	       (:file "constants" :depends-on ("cffi"))
