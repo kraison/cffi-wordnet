@@ -5,6 +5,7 @@
   (:nicknames #:wordnet)
   (:export #:wordnet-init
 	   #:wordnet-search
+           #:morphword
 	   #:+noun+
 	   #:+verb+
 	   #:+adjective+
