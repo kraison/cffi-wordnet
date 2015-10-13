@@ -11,6 +11,7 @@
   :description "CFFI Interface to Wordnet 3.0"
   :depends-on (:cffi
 	       :cl-ppcre
+               :graph-utils
                :alexandria)
   :components ((:file "wordnet-package")
 	       (:file "cffi" :depends-on ("wordnet-package"))

@@ -13,3 +13,4 @@
 (defparameter +relatives+ RELATIVES)
 (defparameter +meronym+ HMERONYM)
 (defparameter +holonym+ HHOLONYM)
+(defparameter +hypernym+ HYPERPTR)
