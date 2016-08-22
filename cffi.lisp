@@ -217,7 +217,7 @@
 	(searchds :pointer))
 
 (cffi:defcvar ("wnresults" wnresults)
- SearchResults)
+ (:struct SearchResults))
 
 (cffi:defcvar ("fnflag" fnflag)
  :int)
